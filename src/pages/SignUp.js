@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -13,11 +13,6 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import ComputerIcon from '@material-ui/icons/Computer';
-
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import SignUp from './SignUp';
-
-
 
 function CopyRight() {
   return (
@@ -52,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function LogIn() {
+export default function SignUp() {
   const classes = useStyles();
 
   return (
@@ -60,24 +55,45 @@ export default function LogIn() {
       <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
-          <ComputerIcon />
+          <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-        <Box fontWeight="fontWeightBold">
-          GLFP에 오신것을 환영합니다
-          </Box>
+          Sign up
         </Typography>
         <form className={classes.form} noValidate>
           <Grid container spacing={2}>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                autoComplete="fname"
+                name="firstName"
+                variant="outlined"
+                required
+                fullWidth
+                id="firstName"
+                label="First Name"
+                autoFocus
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                id="lastName"
+                label="Last Name"
+                name="lastName"
+                autoComplete="lname"
+              />
+            </Grid>
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
                 required
                 fullWidth
-                id="Id"
-                label="ID를 입력해주세요"
-                name="Id"
-                autoComplete="Id"
+                id="email"
+                label="Email Address"
+                name="email"
+                autoComplete="email"
               />
             </Grid>
             <Grid item xs={12}>
@@ -86,10 +102,16 @@ export default function LogIn() {
                 required
                 fullWidth
                 name="password"
-                label="Password를 입력해주세요"
+                label="Password"
                 type="password"
                 id="password"
                 autoComplete="current-password"
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <FormControlLabel
+                control={<Checkbox value="allowExtraEmails" color="primary" />}
+                label="I want to receive inspiration, marketing promotions and updates via email."
               />
             </Grid>
           </Grid>
@@ -97,16 +119,15 @@ export default function LogIn() {
             type="submit"
             fullWidth
             variant="contained"
-            color="green"
+            color="primary"
             className={classes.submit}
           >
-            로그인
+            Sign Up
           </Button>
           <Grid container justify="flex-end">
             <Grid item>
-              <Link to='/Signup' 
-              href="#" variant="body2">
-                처음이신가요? 회원가입하기
+              <Link href="#" variant="body2">
+                Already have an account? Sign in
               </Link>
             </Grid>
           </Grid>
@@ -118,10 +139,3 @@ export default function LogIn() {
     </Container>
   );
 }
-
-// <Link 
-// to='/Log-in'
-// className='nav-links'
-// onClick={closeMobileMenu}>
-//     로그인
-// </Link>
