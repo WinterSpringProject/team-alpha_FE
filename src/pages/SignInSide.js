@@ -102,7 +102,7 @@ export default function SignInSide() {
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
+              label="아이디 저장하기."
             />
             <Button
               type="submit"
