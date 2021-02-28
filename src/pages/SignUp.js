@@ -4,9 +4,13 @@ import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
+<<<<<<< HEAD
 // import Link from '@material-ui/core/Link';
 import { Link } from 'react-router-dom';
 
+=======
+import Link from '@material-ui/core/Link';
+>>>>>>> 74bc897bb0a324c501c74e9165bcd2cb9290c93c
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
@@ -197,8 +201,12 @@ export default function SignUp() {
             
           <Grid container justify="flex-end">
             <Grid item>
+<<<<<<< HEAD
               <Link to='/Log-in'
               href="#" variant="body2">
+=======
+              <Link href="#" variant="body2">
+>>>>>>> 74bc897bb0a324c501c74e9165bcd2cb9290c93c
                 아이디가 있으면 로그인
               </Link>
             </Grid>
