@@ -16,6 +16,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import ComputerIcon from '@material-ui/icons/Computer';
 import '../components/css/Navbar.css';
+import glfpimg from "../components/image/glfp.png";
 
 
 //           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
@@ -30,7 +31,7 @@ const useStyles = makeStyles((theme) => ({   /* 이런 식으로 arrow function 
     backgroundRepeat: 'no-repeat',
     backgroundColor:
       theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
-    backgroundSize: 'cover',
+    backgroundSize: 'scale-down',
     backgroundPosition: 'center',
   },
   paper: {
@@ -63,9 +64,8 @@ export default function Homepage() {
       <Grid item xs={false} sm={4} md={7} className={classes.image} />
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
         <div className={classes.paper}>
-          <Avatar className={classes.pink}>
-            <ComputerIcon />
-          </Avatar>
+        <Avatar alt="Adelle Charles" src={glfpimg} className={classes.avatar}/>
+
           <Typography component="h1" variant="h4">
             GLFP
           </Typography>
@@ -107,13 +107,15 @@ export default function Homepage() {
             </Button>
             <Grid container>
               <Grid item xs>
-                <Link href="#" variant="body2">
+                <Link to ='/Forgot' 
+                href="#" variant="body2">
                   비밀번호를 잊으셨나요?
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="#" variant="body2">
-                  {"처음이신가요? 회원가입하기"}
+                <Link to='/Sign-up'
+                href="#" variant="body2">
+                  "처음이신가요? 회원가입하기"
                 </Link>
               </Grid>
             </Grid>
