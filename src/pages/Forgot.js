@@ -4,13 +4,9 @@ import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-<<<<<<< HEAD
 // import Link from '@material-ui/core/Link';
 import { Link } from 'react-router-dom';
 
-=======
-import Link from '@material-ui/core/Link';
->>>>>>> 74bc897bb0a324c501c74e9165bcd2cb9290c93c
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
@@ -26,21 +22,6 @@ import '../components/css/Section.css';
 
 
 
-const accent = purple['A200']; // #e040fb
-
-
-// function CopyRight() {
-//   return (
-//     <Typography variant="body2" color="textSecondary" align="center">
-//       {'Copyright © '}
-//       <Link color="beige" to='/'>
-//         GLFP
-//       </Link>{' '}
-//       {new Date().getFullYear()}
-//       {'.'}
-//     </Typography>
-//   );
-// }
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -110,83 +91,25 @@ export default function SignUp() {
               />
             </Grid>
 
-            <Grid item xs={6}>
 
-            <TextField select label="성별" variant="outlined" size="large">
-             <MenuItem>남자</MenuItem>
-             <MenuItem>여자</MenuItem>
-             </TextField>
-             </Grid>
-
-            <Grid item xs={6}>
-            <TextField
-                id="date"
-                label="생년월일"
-                type="date"
-                defaultValue="2000-01-01"
-                className={classes.textField}
-                InputLabelProps={{
-                shrink: true,
-              }}
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                id="email"
+                label="이메일를 입력하세요(@sogang.ac.kr)"
+                name="email"
+                autoComplete="email"
               />
             </Grid>
+           
             
-
-            <Grid item xs={12}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                id="ID"
-                label="아이디를 입력하세요"
-                name="ID"
-                autoComplete="ID"
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                name="password"
-                label="비밀번호를 입력하세요"
-                type="password"
-                id="password"
-                autoComplete="current-password"
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                name="password"
-                label="비밀번호를 한번 더 입력하세요"
-                type="password"
-                id="password"
-                autoComplete="current-password"
-              />
-            </Grid>
-            {/* <Grid item xs={12}>
-              <FormControlLabel
-                control={<Checkbox value="allowExtraEmails" color="primary" />}
-                label="약관에 대하여 동의하나요?"
-              />
-            </Grid> */}
+           
           </Grid>
           <Grid container spacing={2}>
-          <Grid item xs={6}>
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="#ffff"
-            className={classes.submit}
-          >
-            가입하기
-          </Button>
-          </Grid>
-          <Grid item xs={6}>
+          
+          <Grid item xs={12}>
           <Button
             type="submit"
             fullWidth
@@ -194,19 +117,15 @@ export default function SignUp() {
             color="accent"
             className={classes.submit}
           >
-            뒤로가기
+            메일로 임시비밀번호 발송하기
           </Button>
           </Grid>
             </Grid>
             
           <Grid container justify="flex-end">
             <Grid item>
-<<<<<<< HEAD
               <Link to='/Log-in'
-              href="#" variant="body2">
-=======
-              <Link href="#" variant="body2">
->>>>>>> 74bc897bb0a324c501c74e9165bcd2cb9290c93c
+               href="#" variant="body2">
                 아이디가 있으면 로그인
               </Link>
             </Grid>
@@ -218,3 +137,4 @@ export default function SignUp() {
     </Container>
   );
 }
+
